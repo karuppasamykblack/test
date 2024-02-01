@@ -1,4 +1,3 @@
-
 plugins {
     id("com.android.library")
     id("maven-publish")
@@ -7,6 +6,12 @@ plugins {
 }
 
 android {
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
     namespace = "com.example.mylibrarygit"
     compileSdk = 33
 
@@ -34,7 +39,7 @@ android {
 }
 java {
     toolchain {
-        languageVersion .set( JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -42,16 +47,20 @@ java {
 // Other configurations for your library module
 
 publishing {
+
     publications {
         create<MavenPublication>("maven") {
+
             groupId = "com.github.karuppasamykblack"
             artifactId = "test"
             version = "1.0.2"
+
             pom {
-            description.set("Release")
+                description.set("Release")
             }
-            }
+
         }
+    }
 
     repositories {
         mavenLocal()
