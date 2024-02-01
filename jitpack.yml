@@ -1,5 +1,7 @@
+language: java
 jdk:
   - openjdk17
+
 before_install:
   - ./scripts/prepareJitpackEnvironment.sh
   - sdk install maven
@@ -8,9 +10,9 @@ install:
   - mvn install -Dmaven.javadoc.skip=true -DskipTests
   - FILE="-Dfile=mylibrarygit-release.aar"
   - mvn install:install-file $FILE -DgroupId=com.github.karuppasamykblack -DartifactId=test -Dversion=1.0.2 -Dpackaging=aar -DgeneratePom=true
+
 script:
   - chmod +x scripts/buildit.sh scripts/prepareJitpackEnvironment.sh
   - ./scripts/prepareJitpackEnvironment.sh
   - mvn clean install
-
 
