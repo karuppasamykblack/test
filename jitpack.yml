@@ -13,3 +13,4 @@ script:
   - ./scripts/prepareJitpackEnvironment.sh
   - mvn clean install
 
+
