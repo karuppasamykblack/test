@@ -22,7 +22,7 @@ public class GitTest extends Application {
         Log.d("Key-->", s);
     }
 
-    public void printToast(String s) {
+    public void printToast() {
         Toast.makeText(getApplicationContext(), "HI", Toast.LENGTH_SHORT).show();
     }
 
