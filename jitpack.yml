@@ -1,7 +1,6 @@
 language: java
 jdk:
   - openjdk17
-
 before_install:
   - ./scripts/prepareJitpackEnvironment.sh
 #  - sdk install maven
