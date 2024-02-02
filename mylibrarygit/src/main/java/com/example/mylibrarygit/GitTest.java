@@ -7,6 +7,10 @@ import android.widget.Toast;
 public class GitTest extends Application {
     private static GitTest instance;
 
+    private GitTest() {
+
+    }
+
     public static GitTest getInstance() {
         if (instance == null) {
             instance = new GitTest();
@@ -14,9 +18,6 @@ public class GitTest extends Application {
         return instance;
     }
 
-    public static void main(String[] args) {
-
-    }
 
     public static void printLog(String s) {
         Log.d("Key-->", s);
